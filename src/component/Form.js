@@ -8,7 +8,7 @@ function Form({ setInputText, inputText, todos, setTodos }) {
     }
     const submitTodoHandler = (e) => {
         e.preventDefault()
-        if(inputText == ''){
+        if(inputText === ''){
             alert('Enter a task')
         }
         else{
