@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Swal from 'sweetalert2/dist/sweetalert2.all.min.js'
+import Swal from 'sweetalert2'
 
 
 function NewTask({ title, index, onDelete, status }) {
