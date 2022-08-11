@@ -125,6 +125,10 @@ button:hover {
   background: red;
   color: #fff;
 }
+.list button:nth-child(4) {
+  background: rgb(18, 185, 226);
+  color: #fff;
+}
 
 @media screen and (max-width: 768px) {
   .main {
@@ -142,4 +146,12 @@ button:hover {
   .sub-main {
     width: 340px;
   }
+}
+
+.active{
+text-decoration-thickness:1.5px ;
+text-decoration-color:rgba(78, 84, 92, 0.658);
+text-decoration-line:line-through ;
+color: rgba(78, 84, 92, 0.658);
+font-weight: 100;
 }

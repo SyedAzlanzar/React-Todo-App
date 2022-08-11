@@ -8,18 +8,20 @@ function Form({ setInputText, inputText, todos, setTodos }) {
     }
     const submitTodoHandler = (e) => {
         e.preventDefault()
-        if(inputText === ''){
+        if (inputText === '') {
             alert('Enter a task')
         }
-        else{
-      
-        setTodos([
-            ...todos, { title: inputText, status: false, id: Math.floor(Math.random() * 1000) }
-        ])
+        else {
 
-        setInputText('')
+            setTodos([
+                ...todos, { title: inputText, status: false, id: Math.floor(Math.random() * 1000) }
+            ])
+
+            setInputText('')
+        }
     }
-}
+
+
     return (
         <form onSubmit={submitTodoHandler} className='myinput' action="">
             <input value={inputText} type="text" onChange={inputTextHandler} placeholder='enter text' />

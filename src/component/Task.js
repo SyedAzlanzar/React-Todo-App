@@ -1,11 +1,11 @@
 import React from "react"
 import NewTask from "./NewTask";
 
-function Task({ todos, deleteTask, editTask }) {
+function Task({ todos, deleteTask, setTodos }) {
   return (
     todos.map((todos) => {
       return (
-        <NewTask onEdit={editTask} onDelete={deleteTask} title={todos.title} key={todos.id} index={todos.id} />
+        <NewTask  onDelete={deleteTask} status={todos.status} title={todos.title} key={todos.id} index={todos.id} />
       )
     })
   )

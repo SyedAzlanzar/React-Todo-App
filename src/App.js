@@ -14,12 +14,6 @@ function App() {
     setTodos(todos.filter((todolist) => todolist.id !== id))
 
   }
-
-  const editTask = (id) => {
-    //to be edited 
-  }
-
-
   return (
     <div className="App">
       <div className="container">
@@ -28,7 +22,7 @@ function App() {
           <div className="sub-main">
             <Form setInputText={setInputText} inputText={inputText} todos={todos} setTodos={setTodos} />
             <div className='todos'>
-              <Task deleteTask={deleteTask} editTask={editTask} todos={todos}></Task>
+              <Task deleteTask={deleteTask} setTodos={setTodos} todos={todos}></Task>
             </div>
           </div>
         </div>
