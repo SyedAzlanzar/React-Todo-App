@@ -12,7 +12,7 @@ function NewTask({ title, index, onDelete, status }) {
 
             const { value: text } = await Swal.fire({
                 input: 'text',
-                inputLabel: 'Message',
+                inputLabel: 'Edit your task',
                 inputPlaceholder: 'enter task to update...',
                 showCancelButton: true
             })

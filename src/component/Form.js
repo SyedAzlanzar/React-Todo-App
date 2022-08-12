@@ -1,4 +1,6 @@
 import React from 'react'
+import Swal from 'sweetalert2'
+
 
 function Form({ setInputText, inputText, todos, setTodos }) {
     const inputTextHandler = (e) => {
@@ -9,7 +11,7 @@ function Form({ setInputText, inputText, todos, setTodos }) {
     const submitTodoHandler = (e) => {
         e.preventDefault()
         if (inputText === '') {
-            alert('Enter a task')
+           Swal.fire("Can't read empty input")
         }
         else {
 
