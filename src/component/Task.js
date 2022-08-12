@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import NewTask from "./NewTask";
 
 function Task({ todos, deleteTask, setTodos }) {

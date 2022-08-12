@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 function NewTask({ index, onDelete, status, todo }) {
   
     const [title1, setTitle] = useState(todo.title)
-    const [status1, setStatus] = useState(status)
+    const [statusState, setStatus] = useState(status)
     const [btn, setBtn] = useState(false)
 
 
@@ -34,7 +34,8 @@ function NewTask({ index, onDelete, status, todo }) {
     
 
     const completed = (index) => {
-        setStatus(true)
+        setStatus(todo.status = !statusState )
+
         setBtn(btn => !btn)
     }
     let toggleBtn = btn ? 'active' : ''
