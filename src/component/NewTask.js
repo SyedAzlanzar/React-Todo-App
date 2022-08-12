@@ -22,13 +22,6 @@ function NewTask({ title, index, onDelete, status }) {
         })()
     }
      
-
-
-    
-   
-    
-   
-
     const completed = (index) => {
         setStatus(true)
         setBtn(btn => !btn)
