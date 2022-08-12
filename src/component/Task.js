@@ -1,11 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import NewTask from "./NewTask";
 
 function Task({ todos, deleteTask, setTodos }) {
   return (
-    todos.map((todos) => {
+    todos.map((todo) => {
       return (
-        <NewTask  onDelete={deleteTask} status={todos.status} title={todos.title} key={todos.id} index={todos.id} />
+        <NewTask todo={todo}  onDelete={deleteTask} status={todo.status} setTodos={setTodos} key={todo.id} index={todo.id} />
       )
     })
   )

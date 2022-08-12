@@ -13,10 +13,12 @@ function App() {
     setTodos(todos.filter((todolist) => todolist.id !== id))
 
   }
+
   return (
     <div className="App">
       <div className="container">
         <h1>TODO LIST</h1>
+        
         <div className='main'>
           <div className="sub-main">
             <Form setInputText={setInputText} inputText={inputText} todos={todos} setTodos={setTodos} />
@@ -27,6 +29,9 @@ function App() {
         </div>
       </div>
     </div>
+
+  
+  
   );
 }
 

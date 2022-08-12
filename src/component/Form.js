@@ -10,11 +10,11 @@ function Form({ setInputText, inputText, todos, setTodos }) {
     }
     const submitTodoHandler = (e) => {
         e.preventDefault()
+      
         if (inputText === '') {
            Swal.fire("Can't read empty input")
         }
         else {
-
             setTodos([
                 ...todos, { title: inputText, status: false, id: Math.floor(Math.random() * 1000) }
             ])
@@ -22,7 +22,6 @@ function Form({ setInputText, inputText, todos, setTodos }) {
             setInputText('')
         }
     }
-
 
     return (
         <form onSubmit={submitTodoHandler} className='myinput' action="">
