@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 
 function NewTask({ title, index, onDelete, status }) {
     const [title1, setTitle] = useState(title)
     const [status1, setStatus] = useState(status)
     const [btn, setBtn] = useState(false)
+    const MySwal = withReactContent(Swal)
 
     const editTask = (index) => {
         (async () => {
 
-            const { value: text } = await Swal.fire({
+            const { value: text } = await MySwal.fire({
                 input: 'text',
                 inputLabel: 'Message',
                 inputPlaceholder: 'enter task to update...',
@@ -21,7 +23,13 @@ function NewTask({ title, index, onDelete, status }) {
             }
         })()
     }
+     
 
+
+    
+   
+    
+   
 
     const completed = (index) => {
         setStatus(true)

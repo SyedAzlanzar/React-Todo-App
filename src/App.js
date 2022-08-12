@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import Task from './component/Task';
 import Form from "./component/Form";
-
+import withReactContent from 'sweetalert2-react-content'
 function App() {
   const [inputText, setInputText] = useState('')
   const [todos, setTodos] = useState([])
