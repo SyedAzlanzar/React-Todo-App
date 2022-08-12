@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 
 
 function NewTask({ index, onDelete, status, todo }) {
-  
+
     const [title1, setTitle] = useState(todo.title)
     const [statusState, setStatus] = useState(status)
     const [btn, setBtn] = useState(false)
@@ -13,28 +13,28 @@ function NewTask({ index, onDelete, status, todo }) {
         (async () => {
 
             const { value: text } = await Swal.fire({
-              input: 'text',
-              inputLabel: 'Message',
-              inputPlaceholder: 'Type your message here...',
-              inputAttributes: {
-                'aria-label': 'Type your message here'
-              },
-              showCancelButton: true
+                input: 'text',
+                inputLabel: 'Message',
+                inputPlaceholder: 'Type your message here...',
+                inputAttributes: {
+                    'aria-label': 'Type your message here'
+                },
+                showCancelButton: true
             })
-            
+
             if (text) {
-        setTitle( todo.title = text )
+                setTitle(todo.title = text)
 
             }
-            
-            })()
-        }
+
+        })()
+    }
 
 
-    
+
 
     const completed = (index) => {
-        setStatus(todo.status = !statusState )
+        setStatus(todo.status = !statusState)
 
         setBtn(btn => !btn)
     }

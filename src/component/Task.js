@@ -5,7 +5,7 @@ function Task({ todos, deleteTask, setTodos }) {
   return (
     todos.map((todo) => {
       return (
-        <NewTask todo={todo}  onDelete={deleteTask} status={todo.status} setTodos={setTodos} key={todo.id} index={todo.id} />
+        <NewTask todo={todo} onDelete={deleteTask} status={todo.status} setTodos={setTodos} key={todo.id} index={todo.id} />
       )
     })
   )

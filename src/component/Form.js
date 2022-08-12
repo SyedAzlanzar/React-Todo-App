@@ -10,9 +10,9 @@ function Form({ setInputText, inputText, todos, setTodos }) {
     }
     const submitTodoHandler = (e) => {
         e.preventDefault()
-      
+
         if (inputText === '') {
-           Swal.fire("Can't read empty input")
+            Swal.fire("Can't read empty input")
         }
         else {
             setTodos([
