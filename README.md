@@ -1,4 +1,4 @@
-Have a look of React Todolist app at https://az-react-todo-app.netlify.app/
+Have a look of React Todolist app at az-react-todo-app.netlify.app
 
 ==================================================================
 
