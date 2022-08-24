@@ -1,57 +1,63 @@
-import React, { useState } from 'react'
-import Swal from 'sweetalert2'
+import React, { useState } from "react";
+import Swal from "sweetalert2";
 
+function NewTask({ index, onDelete, status, todo, todos }) {
+  const [title1, setTitle] = useState(todo.title);
+  const [statusState, setStatus] = useState(status);
+  //   const [btn, setBtn] = useState(false);
 
-function NewTask({ index, onDelete, status, todo }) {
+  const editTask = (todo) => {
+    (async () => {
+      const { value: text } = await Swal.fire({
+        input: "text",
+        inputLabel: "Message",
+        inputPlaceholder: "Type your message here...",
+        inputAttributes: {
+          "aria-label": "Type your message here",
+        },
+        showCancelButton: true,
+      });
 
-    const [title1, setTitle] = useState(todo.title)
-    const [statusState, setStatus] = useState(status)
-    const [btn, setBtn] = useState(false)
+      if (text) {
+        setTitle((todo.title = text));
+        localStorage.setItem("todos", JSON.stringify(todos));
+      }
+    })();
+  };
+  const [classes, setClasses] = useState([]);
+  const completed = (index) => {
+    if (todo.status === false) {
+      console.log("hii");
+      setStatus((todo.status = true));
+      setClasses(["active"]);
 
-
-    const editTask = (todo) => {
-        (async () => {
-
-            const { value: text } = await Swal.fire({
-                input: 'text',
-                inputLabel: 'Message',
-                inputPlaceholder: 'Type your message here...',
-                inputAttributes: {
-                    'aria-label': 'Type your message here'
-                },
-                showCancelButton: true
-            })
-
-            if (text) {
-                setTitle(todo.title = text)
-
-            }
-
-        })()
+      localStorage.setItem("todos", JSON.stringify(todos));
+    } else {
+      setStatus((todo.status = false));
+      setClasses([]);
+      localStorage.setItem("todos", JSON.stringify(todos));
     }
+  };
 
-
-
-
-    const completed = (index) => {
-        setStatus(todo.status = !statusState)
-
-        setBtn(btn => !btn)
-    }
-    let toggleBtn = btn ? 'active' : ''
-    return (
-        <div className="mainlist">
-            <div className='list'>
-                <h4 className={toggleBtn}>{title1}</h4>
-                <button onClick={() => editTask(todo)} ><i className='fa-solid fa-pen'></i></button>
-                <button onClick={() => onDelete(index)}><i className='fa-solid fa-trash'></i></button>
-                <button onClick={completed} ><i className='fa-solid fa-check'></i></button>
-            </div>
-            <div className="date">
-                <p>{new Date().toDateString()}</p>
-            </div>
-        </div>
-    )
+  return (
+    <div className="mainlist">
+      <div className="list">
+        <h4 className={classes}>{title1}</h4>
+        <button onClick={() => editTask(todo)}>
+          <i className="fa-solid fa-pen"></i>
+        </button>
+        <button onClick={() => onDelete(index)}>
+          <i className="fa-solid fa-trash"></i>
+        </button>
+        <button onClick={completed}>
+          <i className="fa-solid fa-check"></i>
+        </button>
+      </div>
+      <div className="date">
+        <p>{new Date().toDateString()}</p>
+      </div>
+    </div>
+  );
 }
 
-export default NewTask
+export default NewTask;
