@@ -5,6 +5,7 @@ function NewTask({ index, onDelete, status, todo, todos }) {
   const [title1, setTitle] = useState(todo.title);
   const [statusState, setStatus] = useState(status);
   //   const [btn, setBtn] = useState(false);
+  
 
   const editTask = (todo) => {
     (async () => {
@@ -26,6 +27,8 @@ function NewTask({ index, onDelete, status, todo, todos }) {
   };
   const [classes, setClasses] = useState([]);
   const completed = (index) => {
+  console.log(statusState)
+
     if (todo.status === false) {
       console.log("hii");
       setStatus((todo.status = true));
