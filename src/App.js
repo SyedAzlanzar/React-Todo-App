@@ -1,11 +1,20 @@
 import React from "react";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Task from "./component/Task";
 import Form from "./component/Form";
 function App() {
+  const getLocalStorageItems = () => {
+    let listoftodos = localStorage.getItem("todos");
+    if (listoftodos) {
+      return JSON.parse(localStorage.getItem("todos"));
+    } else {
+      return [];
+    }
+  };
+
   const [inputText, setInputText] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(getLocalStorageItems());
 
   // set items in local storage
   useEffect(() => {
