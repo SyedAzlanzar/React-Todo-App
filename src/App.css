@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .container {
@@ -9,33 +10,241 @@ body {
   background: #f5f5f5;
 }
 
-.container h1 {
+.signup-form-container {
+  position: relative;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url(/scattered-forcefields.svg) no-repeat center/contain;
+}
+
+.signup-form-container .signup-form {
+  z-index: 0;
+  zoom: 110%;
+  -webkit-box-shadow: 0 0 3px #0000005a;
+          box-shadow: 0 0 3px #0000005a;
+  min-width: 300px;
+  border-radius: 5px;
+  padding: 10px 30px 20px 20px;
+  background: #FFFFFF;
+}
+
+.signup-form-container .signup-form h2 {
+  margin-left: 10px;
+}
+
+.signup-form-container .signup-form fieldset {
+  margin: 7px 0;
+  border: none;
+}
+
+.signup-form-container .signup-form fieldset label,
+.signup-form-container .signup-form fieldset input {
+  width: 100%;
+}
+
+.signup-form-container .signup-form fieldset label {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.signup-form-container .signup-form fieldset input {
+  margin: 4px 0;
+  background: #f5f5f5;
+  -webkit-box-shadow: 0 0 1px #0000005a inset;
+          box-shadow: 0 0 1px #0000005a inset;
+  padding: 10px 6px;
+  outline: none;
+  border: none;
+}
+
+.signup-form-container .signup-form fieldset .signup-btn {
+  background: #e9e5e5;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 0;
+  border-radius: 0;
+  padding: 6px 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 1px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.signup-form-container .signup-form fieldset .signup-btn:hover {
+  background: #e2dfdf;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.signup-form-container .signup-form fieldset a {
+  margin: 0 auto;
+  font-size: 11px;
+  text-decoration: none;
+  color: steelblue;
+}
+
+.signin-form-container {
+  position: relative;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url(/scattered-forcefields.svg) no-repeat center/contain;
+}
+
+.signin-form-container .signin-form {
+  z-index: 0;
+  zoom: 110%;
+  -webkit-box-shadow: 0 0 3px #0000005a;
+          box-shadow: 0 0 3px #0000005a;
+  min-width: 300px;
+  border-radius: 5px;
+  padding: 10px 30px 20px 20px;
+  background: #ffffff;
+}
+
+.signin-form-container .signin-form h2 {
+  margin-left: 10px;
+}
+
+.signin-form-container .signin-form fieldset {
+  margin: 7px 0;
+  border: none;
+}
+
+.signin-form-container .signin-form fieldset label,
+.signin-form-container .signin-form fieldset input {
+  width: 100%;
+}
+
+.signin-form-container .signin-form fieldset label {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.signin-form-container .signin-form fieldset input {
+  margin: 4px 0;
+  background: #f5f5f5;
+  -webkit-box-shadow: 0 0 1px #0000005a inset;
+          box-shadow: 0 0 1px #0000005a inset;
+  padding: 10px 6px;
+  outline: none;
+  border: none;
+}
+
+.signin-form-container .signin-form fieldset .signin-btn {
+  background: #e9e5e5;
+  outline: none;
+  border: 0;
+  border-radius: 0;
+  padding: 6px 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 1px;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin: 0;
+}
+
+.signin-form-container .signin-form fieldset .signin-btn:hover {
+  background: #e2dfdf;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.signin-form-container .signin-form fieldset a {
+  margin: 0 auto;
+  font-size: 11px;
+  text-decoration: none;
+  color: steelblue;
+}
+
+.container h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0;
   height: 15vh;
   text-align: center;
 }
 
-.main {
+.logout-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.logout-btn button {
+  margin: 15px 20px;
+  font-size: 15px;
+  border: 0;
+}
+
+.logout-btn button:hover {
+  -webkit-box-shadow: 0 0 4px #0000001a;
+          box-shadow: 0 0 4px #0000001a;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .sub-main {
   width: 500px;
-
   padding: 10px;
   background: rgba(224, 223, 219, 0.2);
   border-radius: 6px;
-  box-shadow: 0px 0px 10px #0000001a inset;
+  -webkit-box-shadow: 0px 0px 10px #0000001a inset;
+          box-shadow: 0px 0px 10px #0000001a inset;
 }
+
 .myinput {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .myinput input {
@@ -46,7 +255,20 @@ body {
   outline: none;
   border: none;
   border-radius: 3px;
-  box-shadow: 0 0 5px #0000001a;
+  -webkit-box-shadow: 0 0 5px #0000001a;
+          box-shadow: 0 0 5px #0000001a;
+}
+
+.myinput input::-webkit-input-placeholder {
+  font-size: 12px;
+}
+
+.myinput input:-ms-input-placeholder {
+  font-size: 12px;
+}
+
+.myinput input::-ms-input-placeholder {
+  font-size: 12px;
 }
 
 .myinput input::placeholder {
@@ -61,13 +283,15 @@ button {
   font-size: 20px;
   outline: none;
   border: none;
-  box-shadow: 0 0 5px #0000001a;
+  -webkit-box-shadow: 0 0 5px #0000001a;
+          box-shadow: 0 0 5px #0000001a;
   border-radius: 3px;
   cursor: pointer;
 }
 
 button:hover {
-  box-shadow: 0px 0px 5px #0000003a;
+  -webkit-box-shadow: 0px 0px 5px #0000003a;
+          box-shadow: 0px 0px 5px #0000003a;
 }
 
 .todos {
@@ -75,20 +299,32 @@ button:hover {
 }
 
 .mainlist {
-  box-shadow: 0 0 5px #0000001a inset;
+  -webkit-box-shadow: 0 0 5px #0000001a inset;
+          box-shadow: 0 0 5px #0000001a inset;
   padding: 2px 10px 10px 10px;
   margin: 15px 0;
 }
 
 .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .mainlist .date {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
 .date p {
@@ -111,7 +347,8 @@ button:hover {
   font-size: 18px;
   outline: none;
   border: none;
-  box-shadow: 0 0 5px #0000001a;
+  -webkit-box-shadow: 0 0 5px #0000001a;
+          box-shadow: 0 0 5px #0000001a;
   border-radius: 3px;
   font-weight: 500;
 }
@@ -125,8 +362,9 @@ button:hover {
   background: red;
   color: #fff;
 }
+
 .list button:nth-child(4) {
-  background: rgb(18, 185, 226);
+  background: #12b9e2;
   color: #fff;
 }
 
@@ -148,10 +386,13 @@ button:hover {
   }
 }
 
-.active{
-text-decoration-thickness:1.5px ;
-text-decoration-color:rgba(78, 84, 92, 0.658);
-text-decoration-line:line-through ;
-color: rgba(78, 84, 92, 0.658);
-font-weight: 100;
+.active {
+  text-decoration-thickness: 1.5px;
+  -webkit-text-decoration-color: rgba(78, 84, 92, 0.658);
+          text-decoration-color: rgba(78, 84, 92, 0.658);
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+  color: rgba(78, 84, 92, 0.658);
+  font-weight: 100;
 }
+/*# sourceMappingURL=App.css.map */
