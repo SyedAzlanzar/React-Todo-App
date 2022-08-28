@@ -93,6 +93,15 @@ body {
   color: steelblue;
 }
 
+@media screen and (max-width: 375px) {
+  .signup-form-container {
+    background: url(/19366.jpg) no-repeat center/cover;
+  }
+  .signup-form-container .signup-form {
+    zoom: 100% !important;
+  }
+}
+
 .signin-form-container {
   position: relative;
   min-height: 100vh;
@@ -174,6 +183,15 @@ body {
   font-size: 11px;
   text-decoration: none;
   color: steelblue;
+}
+
+@media screen and (max-width: 375px) {
+  .signin-form-container {
+    background: url(/19366.jpg) no-repeat center/cover;
+  }
+  .signin-form-container .signin-form {
+    zoom: 100% !important;
+  }
 }
 
 .container h1 {

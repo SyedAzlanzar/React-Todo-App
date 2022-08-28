@@ -65,3 +65,14 @@
     }
   }
 }
+
+@media screen and (max-width: 375px) {
+  .signin-form-container{
+   background: url(/19366.jpg) no-repeat center/cover;
+ 
+   .signin-form{
+     zoom: 100% !important;
+   }
+  }
+  
+ }
