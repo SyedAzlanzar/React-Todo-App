@@ -4,7 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import auth from "../../firebase-config";
 
 
-function Signin() {
+function Signin({getData}) {
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
     let navigate = useNavigate()
@@ -18,7 +18,7 @@ function Signin() {
                 loginPassword
             );
             navigate("/Todolist")
-            console.log(user);
+            getData(user)
         } catch (error) {
             console.log(error.message);
         }

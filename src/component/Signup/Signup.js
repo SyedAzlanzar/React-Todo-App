@@ -4,10 +4,11 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth from '../../firebase-config';
 
 
-function Signup() {
+function Signup({ getData }) {
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
-let navigate = useNavigate()
+    let navigate = useNavigate()
+
 
     const register = async (event) => {
         event.preventDefault();
@@ -18,22 +19,24 @@ let navigate = useNavigate()
                 registerEmail,
                 registerPassword
             );
+            getData(user)
             navigate("/Todolist")
-            console.log(user);
-
         }
         catch (error) {
-            console.log(error.message);
+            console.log(error.message)
         }
         setRegisterEmail('')
         setRegisterPassword('')
+
     };
+
+
 
     return (
 
-        <div className='signup-form-container'>
+        <div className='signup-form-container' >
 
-            <form action="" className='signup-form'>
+            <form className='signup-form' onSubmit={register}>
                 <h2>Let's get started</h2>
                 <fieldset>
                     <label htmlFor="">Email</label>
@@ -41,11 +44,6 @@ let navigate = useNavigate()
                         setRegisterEmail(event.target.value);
                     }} />
                 </fieldset>
-
-                {/* <fieldset>
-                    <label htmlFor="">Username</label>
-                    <input type="text" placeholder='username' required />
-                </fieldset> */}
 
                 <fieldset>
                     <label htmlFor="">Password</label>
@@ -65,5 +63,6 @@ let navigate = useNavigate()
 
     )
 }
+
 
 export default Signup

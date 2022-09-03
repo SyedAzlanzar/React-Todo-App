@@ -1,12 +1,12 @@
 import React from 'react'
-import {  useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 import { useState, useEffect } from "react";
 
 import Task from './Task'
 import Form from "./Form"
 
-function Todolist() {
+function Todolist({userId}) {
     let navigate = useNavigate()
     const getLocalStorageItems = () => {
         let listoftodos = localStorage.getItem("todos");
@@ -46,12 +46,14 @@ function Todolist() {
                                 inputText={inputText}
                                 todos={todos}
                                 setTodos={setTodos}
+                                userId={userId}
                             />
                             <div className="todos">
                                 <Task
                                     deleteTask={deleteTask}
                                     setTodos={setTodos}
                                     todos={todos}
+                                    userId={userId}
                                 ></Task>
                             </div>
                         </div>
