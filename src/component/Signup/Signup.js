@@ -24,7 +24,7 @@ function Signup({ getData }) {
             navigate("/Todolist")
         }
         catch (error) {
-           if(registerEmail == '' || registerPassword == ''){
+           if(registerEmail === '' || registerPassword === ''){
             Swal.fire('Please fill up the form')
            }
            else{

@@ -25,7 +25,7 @@ function Signin({ getData }) {
             getData(user)
         } catch (error) {
             console.log(error)
-            if (loginEmail == '') {
+            if (loginEmail === '') {
                 Swal.fire('Please enter credentials')
             }
             else if (error.message) {
