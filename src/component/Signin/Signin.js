@@ -2,15 +2,19 @@ import { Link, useNavigate } from "react-router-dom"
 import React, { useState } from 'react'
 import { signInWithEmailAndPassword } from "firebase/auth";
 import auth from "../../firebase-config";
+import Swal from 'sweetalert2'
 
 
-function Signin({getData}) {
+
+function Signin({ getData }) {
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
     let navigate = useNavigate()
 
+
     const login = async (event) => {
         event.preventDefault();
+
         try {
             const user = await signInWithEmailAndPassword(
                 auth,
@@ -20,7 +24,19 @@ function Signin({getData}) {
             navigate("/Todolist")
             getData(user)
         } catch (error) {
-            console.log(error.message);
+            console.log(error)
+            if (loginEmail == '') {
+                Swal.fire('Please enter credentials')
+            }
+            else if (error.message) {
+                Swal.fire('Invalid email / password')
+            }
+            else{
+                Swal.fire('login successful')
+
+            }
+
+
         }
         setLoginEmail('')
         setLoginPassword('')

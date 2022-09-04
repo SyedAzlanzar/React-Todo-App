@@ -6,7 +6,7 @@ function Task({ todos, deleteTask, setTodos, userId }) {
     todos.map((todo) => {
       // if(userId === todo.userfilterid){
       return (
-        (userId === todo.userfilterid)? <NewTask todo={todo} todos={todos} onDelete={deleteTask} status={todo.status} setTodos={setTodos} key={todo.id} index={todo.id} /> : ''
+        (userId === todo.userfilterid) ? <NewTask todo={todo} todos={todos} onDelete={deleteTask} status={todo.status} setTodos={setTodos} key={todo.id} index={todo.id} /> : ''
       )
       // }
     })

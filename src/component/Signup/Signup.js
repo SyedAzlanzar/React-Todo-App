@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth from '../../firebase-config';
+import Swal from 'sweetalert2'
 
 
 function Signup({ getData }) {
@@ -23,7 +24,12 @@ function Signup({ getData }) {
             navigate("/Todolist")
         }
         catch (error) {
-            console.log(error.message)
+           if(registerEmail == '' || registerPassword == ''){
+            Swal.fire('Please fill up the form')
+           }
+           else{
+            Swal.fire('email already in use')
+           }
         }
         setRegisterEmail('')
         setRegisterPassword('')

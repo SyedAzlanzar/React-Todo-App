@@ -2,7 +2,9 @@ import React from 'react'
 import Swal from 'sweetalert2'
 
 
-function Form({ setInputText, inputText, todos, setTodos,userId }) {
+function Form({ setInputText, inputText, todos, setTodos, userId }) {
+
+
     const inputTextHandler = (e) => {
         e.preventDefault()
         setInputText(e.target.value)
@@ -16,12 +18,15 @@ function Form({ setInputText, inputText, todos, setTodos,userId }) {
         }
         else {
             setTodos([
-                ...todos, { title: inputText, status: false, id: Math.floor(Math.random() * 1000), userfilterid:userId }
+                ...todos, { title: inputText, status: false, id: Math.floor(Math.random() * 1000), userfilterid: userId }
             ])
 
-            setInputText('')
+
         }
+
+        setInputText('')
     }
+
 
     return (
         <form onSubmit={submitTodoHandler} className='myinput' action="">
